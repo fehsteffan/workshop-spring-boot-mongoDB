@@ -34,6 +34,21 @@ public class UsuaryService {
 		repository.deleteById(id);
 	}
 	
+	
+	public Usuary update(Usuary obj) {
+		Usuary newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return repository.save(newObj);
+		
+	}	
+	
+	private void updateData(Usuary newObj, Usuary obj) {
+		newObj.setName(obj.getName());
+		newObj.setEmail(obj.getEmail());
+		
+		
+	}
+
 	public Usuary fromDTO(UsuaryDTO objDto) {
 		return new Usuary(objDto.getId(), objDto.getName(), objDto.getEmail());
 		}

@@ -56,4 +56,11 @@ public class UsuaryResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody UsuaryDTO objDto, @PathVariable String id) {
+		Usuary obj = service.fromDTO(objDto);
+		obj.setId(id);
+		obj = service.update(obj);
+		return ResponseEntity.noContent().build();		
+	}	
 }
