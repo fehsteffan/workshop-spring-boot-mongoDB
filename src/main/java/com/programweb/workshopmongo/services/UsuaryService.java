@@ -29,6 +29,11 @@ public class UsuaryService {
 		return repository.insert(obj);
 		}
 	
+	public void delete(String id) {
+		findById(id);
+		repository.deleteById(id);
+	}
+	
 	public Usuary fromDTO(UsuaryDTO objDto) {
 		return new Usuary(objDto.getId(), objDto.getName(), objDto.getEmail());
 		}
