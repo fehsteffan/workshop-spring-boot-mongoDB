@@ -31,8 +31,7 @@ public class Instantiation implements CommandLineRunner {
 		
 		
 		usuaryRepository.deleteAll();
-		postRepository.deleteAll();
-		
+		postRepository.deleteAll();	
 		
 		
 		Usuary maria = new Usuary (null, "Maria Brown", "maria@gmail.com");
@@ -46,6 +45,9 @@ public class Instantiation implements CommandLineRunner {
 		
 		
 		postRepository.saveAll(Arrays.asList(post1, post2));	
+		
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		usuaryRepository.save(maria);
 	
 		
 	}
