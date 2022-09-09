@@ -19,7 +19,12 @@ public class Instantiation implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+		
+		
+		
 		usuaryRepository.deleteAll();
+		
+		
 		
 		Usuary maria = new Usuary (null, "Maria Brown", "maria@gmail.com");
 		Usuary alex = new Usuary (null, "Alex Green", "alex@gmail.com");
